@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-eval */
 import React, { createContext, useEffect } from 'react';
 import dsBridge from 'dsbridge';
