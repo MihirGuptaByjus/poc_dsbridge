@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useContext, useEffect } from 'react';
 import { dsbridgeContext } from './DSBridgeProvider';
@@ -7,7 +7,7 @@ function App() {
 
 
 
-const { call, register, logger } = useContext(dsbridgeContext);
+const { register, logger } = useContext(dsbridgeContext);
 useEffect(()=>{
   register('onInitCallBack', (data)=>{
     logger(data, 'FromFlutter');
