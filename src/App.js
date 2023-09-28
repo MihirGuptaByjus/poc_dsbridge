@@ -1,22 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { useContext, useEffect } from 'react';
+import { dsbridgeContext } from './DSBridgeProvider';
 
 function App() {
+
+
+
+const { call, register, logger } = useContext(dsbridgeContext);
+useEffect(()=>{
+  register('onInitCallBack', (data)=>{
+    logger(data, 'FromFlutter');
+  })
+})
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          DSBridge Logger
+
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+   <div id='myLogger' style={{display: 'flex', flexDirection: 'column'}}></div>
       </header>
     </div>
   );
